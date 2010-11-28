@@ -176,6 +176,34 @@
 
 
 
+        <dependency>
+        	<groupId>com.google.guava</groupId>
+        	<artifactId>guava-collections</artifactId>
+        	<version>r03</version>
+        	<type>jar</type>
+        	<scope>compile</scope>
+        </dependency>
+        <dependency>
+        	<groupId>commons-httpclient</groupId>
+        	<artifactId>commons-httpclient</artifactId>
+        	<version>20020423</version>
+        	<type>jar</type>
+        	<scope>compile</scope>
+        </dependency>
+        <dependency>
+        	<groupId>commons-lang</groupId>
+        	<artifactId>commons-lang</artifactId>
+        	<version>2.5</version>
+        	<type>jar</type>
+        	<scope>compile</scope>
+        </dependency>
+        <dependency>
+        	<groupId>org.codehaus.jettison</groupId>
+        	<artifactId>jettison</artifactId>
+        	<version>1.0.1</version>
+        	<type>jar</type>
+        	<scope>compile</scope>
+        </dependency>
 	</dependencies>
 
 	<build>

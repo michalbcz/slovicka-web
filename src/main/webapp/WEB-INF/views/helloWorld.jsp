@@ -9,7 +9,7 @@
 
 <h2>${message}</h2>
 
-<p>Localized: <fmt:message key="message.text"/></p>
+<p>Localized: <fmt:message key="mainpage.title"/></p>
 <p>Locale: ${pageContext.response.locale}</p>
 
 <a href="?locale=cs">CS</a> | <a href="?locale=en">EN</a>
