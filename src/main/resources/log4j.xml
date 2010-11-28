@@ -27,6 +27,10 @@
 	<logger name="org.springframework.web">
 		<level value="info" />
 	</logger>
+	
+	<logger name="httpclient.wire">
+	   <level value="error" />
+	</logger>
 
 	<!-- Root Logger -->
 	<root>

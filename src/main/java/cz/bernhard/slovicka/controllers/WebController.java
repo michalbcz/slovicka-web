@@ -1,5 +1,6 @@
 package cz.bernhard.slovicka.controllers;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,8 +24,9 @@ public class WebController {
 	public ModelAndView index(@RequestParam(required=false) String word) {
 		ModelAndView mv = new ModelAndView();
 		
-		if (word != null) {
+		if (!StringUtils.isBlank(word)) {
 			mv.addObject("translation", translateService.translate(word, "en", "cs"));
+			mv.addObject("word", word);
 		}
 		
 		mv.setViewName("translate");

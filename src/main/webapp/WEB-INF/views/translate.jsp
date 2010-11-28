@@ -6,13 +6,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Slovíčka</title>
+<title><fmt:message>application.title</fmt:message></title>
+
+<script type="text/javascript">
+    document.getElementById("word").focus();
+</script>
+
 </head>
 <body>
-    <h1>Slovíčka</h1>
+    <h1><fmt:message>application.title</fmt:message></h1>
     
     <form action="/translate" method="get">
-        <input type="text" name="word"/>
+        <input type="text" id="word" name="word" value="${word}"/>
         
         <fmt:message var="translateLabel">page.translate.translate</fmt:message>
         <input type="submit" value="${translateLabel}" />    
