@@ -20,11 +20,19 @@
     
     <hr/>
     
-    <c:if test="word">
-    <div id="translation">
-    <h3>Překlad:</h3>
-    ${translation}
-    </div>
+    <c:if test="${translation != null}">
+	    <h3>Překlad:</h3>
+	    
+	    <div id="translation">
+	    <table>
+	    <c:forEach items="${translation.words}" var="word">
+	   	    <tr>
+	          <td>${word.word}</td>
+	        </tr>
+	    </c:forEach>
+	    </table>
+	    </div>
+	    
     </c:if>
     
 </body>

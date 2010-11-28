@@ -6,13 +6,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import cz.bernhard.slovicka.services.ITranslateService;
+import cz.bernhard.slovicka.services.ITranslationService;
 
 @Controller
 public class WebController {
 	
 	@Autowired
-	public ITranslateService translateService;
+	public ITranslationService translateService;
 
 //	@RequestMapping(value = "/index")
 //	public ModelAndView index() {

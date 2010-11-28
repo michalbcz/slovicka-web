@@ -2,7 +2,7 @@ package cz.bernhard.slovicka.services;
 
 import cz.bernhard.slovicka.domains.TranslationResult;
 
-public interface ITranslateService {
+public interface ITranslationService {
 
 	/**
 	 * Translate word from one language to other language.
