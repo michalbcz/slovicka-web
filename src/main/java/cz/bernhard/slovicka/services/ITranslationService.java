@@ -2,6 +2,12 @@ package cz.bernhard.slovicka.services;
 
 import cz.bernhard.slovicka.domains.TranslationResult;
 
+
+/**
+ * Service for translation of given word.
+ *
+ * @author Michal Bernhard <michal@bernhard.cz>
+ */
 public interface ITranslationService {
 
 	/**

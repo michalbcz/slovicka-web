@@ -9,16 +9,16 @@ import org.springframework.web.servlet.ModelAndView;
 
 import cz.bernhard.slovicka.services.ITranslationService;
 
+/**
+ * Controller for handling all standard web requests (ie. not rest api, not mobile version)
+ * 
+ * @author Michal Bernhard <michal@bernhard.cz>
+ *
+ */
 @Controller
 public class WebController {
 	
-	@Autowired
-	public ITranslationService translateService;
-
-//	@RequestMapping(value = "/index")
-//	public ModelAndView index() {
-//		return new ModelAndView("index");
-//	}
+	@Autowired public ITranslationService translateService;
 	
 	@RequestMapping(value = "/translate")
 	public ModelAndView index(@RequestParam(required=false) String word) {

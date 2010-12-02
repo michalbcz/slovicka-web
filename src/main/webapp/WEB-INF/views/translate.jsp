@@ -26,7 +26,7 @@
     <hr/>
     
     <c:if test="${translation != null}">
-	    <h3>Překlad:</h3>
+	    <h3><fmt:message>page.translate.translationLabel</fmt:message></h3>:
 	    
 	    <div id="translation">
 	    <table>
