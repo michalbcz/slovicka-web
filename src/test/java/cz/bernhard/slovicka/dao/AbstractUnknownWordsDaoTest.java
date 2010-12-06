@@ -1,3 +1,4 @@
+package cz.bernhard.slovicka.dao;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
@@ -10,7 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.matchers.JUnitMatchers;
 
-import cz.bernhard.slovicka.dao.IUnknownWordDao;
+import cz.bernhard.slovicka.domains.User;
 import cz.bernhard.slovicka.domains.Word;
 
 
@@ -19,8 +20,10 @@ public abstract class AbstractUnknownWordsDaoTest {
 	
 	private static SessionFactory sf;
 	private IUnknownWordDao dao;
+	private IUserDao userDao;
 	
-	protected abstract IUnknownWordDao createDaoImplementation();
+	protected abstract IUnknownWordDao createUnknownWordDaoImplementation();
+	protected abstract IUserDao createUserDaoImplementation();
 
 	protected SessionFactory getSessionFactory() {
 		return sf;
@@ -37,7 +40,8 @@ public abstract class AbstractUnknownWordsDaoTest {
 
 	@Before
 	public void beforeEachTest() {		
-		dao = createDaoImplementation();
+		dao = createUnknownWordDaoImplementation();
+		userDao = createUserDaoImplementation();
 	}
 	
 	@After
@@ -52,16 +56,25 @@ public abstract class AbstractUnknownWordsDaoTest {
 	
 	@Test
 	public void saveTest() {
-		Word word = new Word("asshole");
+		User user = new User().setUsername("michalb_cz").setPassword("i4ml33t");
+		userDao.save(user);
+		
+		Word word = new Word("gonna").setUser(user);		
 		dao.save(word);
 		
 		List<Word> allWords = dao.findAll();
 		Assert.assertThat("contains an asshole word", allWords, JUnitMatchers.hasItem(word));
 	}
 	
+	@Test(expected = Exception.class)
+	public void failOnSaveOnNullUserTest() {
+		Word word = new Word("be");
+		dao.save(word);
+	}
+	
 	@Test
 	public void noDataAfterDbCleanTest() {
-		Word word = new Word("asshole").setId(1L);	
+		Word word = new Word("legendary").setId(1L);	
 		
 		List<Word> allWords = dao.findAll();
 		Assert.assertFalse(allWords.contains(word));

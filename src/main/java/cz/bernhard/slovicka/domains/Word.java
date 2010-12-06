@@ -2,9 +2,11 @@ package cz.bernhard.slovicka.domains;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity(name="words")
@@ -20,6 +22,12 @@ public class Word {
 	
 	@Column(name = "count_of_findings")
 	private Long countOfFindings; /* indicates how many times user looking for this word */
+	
+	@OneToOne(
+			optional=false,
+			fetch=FetchType.LAZY
+	)  
+	private User user;
 
 	public Word() { /* default constructor to conform JavaBean spec */ }
 	
@@ -43,6 +51,25 @@ public class Word {
 	
 	public String getWord() {
 		return word;
+	}
+		
+
+	public Long getCountOfFindings() {
+		return countOfFindings;
+	}
+
+	public Word setCountOfFindings(Long countOfFindings) {
+		this.countOfFindings = countOfFindings;
+		return this;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public Word setUser(User user) {
+		this.user = user;
+		return this;
 	}
 
 	@Override

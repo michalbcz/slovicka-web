@@ -31,6 +31,14 @@
 	<logger name="httpclient.wire">
 	   <level value="error" />
 	</logger>
+	
+	<logger name="org.hibernate.SQL">
+       <level value="debug" />
+    </logger>
+
+    <logger name="org.hibernate.type">
+       <level value="debug" />
+    </logger>
 
 	<!-- Root Logger -->
 	<root>

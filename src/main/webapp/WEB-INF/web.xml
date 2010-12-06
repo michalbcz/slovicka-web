@@ -47,14 +47,14 @@
 	
 <!--     this is related to ContextLoaderListener class - -->
 <!--         default contextConfigLocation is applicationConfiguration.xml and it's ok for us -->
-	<context-param>
-		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/slovicka-servlet.xml</param-value>
-	</context-param>
+<!--	<context-param>-->
+<!--		<param-name>contextConfigLocation</param-name>-->
+<!--		<param-value>/WEB-INF/slovicka-servlet.xml</param-value>-->
+<!--	</context-param>-->
 
-<!--	<listener>-->
-<!--		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>-->
-<!--	</listener>-->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
 
 <!--	 <error-page> -->
 <!--	 <error-code>500</error-code> -->
